@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asesorías IA</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Asesorías IA</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="Principal.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Tablas.html">Tablas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Video.html">Vídeo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Formulario.html">Formulario</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Imagen debajo de la barra de navegación -->
+    <img
+      src="img/fondo.jpeg"
+      alt="Una imagen descriptiva"
+      width="100%"
+      height="350px"
+    />
+
+    <!-- Contenido con barra lateral y área principal -->
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Barra lateral -->
+        <div class="col-md-3">
+          <h3>MENÚ</h3>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="Principal.html">Inicio</a></li>
+            <li class="list-group-item"><a href="Tablas.html">Tablas</a></li>
+            <li class="list-group-item"><a href="Video.html">Vídeo</a></li>
+            <li class="list-group-item">
+              <a href="Formulario.html">Formulario</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="col-md-9">
+          <h2>Contacto</h2>
+          <div>
+            <form id="frmContacto">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="direccion"
+                  name="direccion"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="correo" class="form-label">Correo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="correo"
+                  name="correo"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ciudad"
+                  name="ciudad"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="edad"
+                  name="edad"
+                  min="1"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-success">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="mt-4 p-3 bg-light">
+      <div class="container">
+        <p>© 2023 Asesorías IA</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      window.onload = () => {
+        document
+          .getElementById("frmContacto")
+          .addEventListener("submit", function (event) {
+            // Previniendo el envío del formulario
+            event.preventDefault();
+
+            // Validación para el campo Nombre
+            var nombre = document.getElementById("nombre");
+            if (nombre.value.trim() === "") {
+              alert("El campo Nombre no puede estar vacío.");
+              nombre.focus();
+              return false;
+            }
+
+            // Validación para el campo Dirección
+            var direccion = document.getElementById("direccion");
+            if (direccion.value.trim() === "") {
+              alert("El campo Dirección no puede estar vacío.");
+              direccion.focus();
+              return false;
+            }
+
+            // Validación para el campo Teléfono
+            var telefono = document.getElementById("telefono");
+            if (telefono.value.trim() === "") {
+              alert("El campo Teléfono no puede estar vacío.");
+              telefono.focus();
+              return false;
+            }
+
+            // Validación para el campo Correo
+            var correo = document.getElementById("correo");
+            if (correo.value.trim() === "") {
+              alert("El campo Correo no puede estar vacío.");
+              correo.focus();
+              return false;
+            }
+
+            // Validación para el campo Ciudad
+            var ciudad = document.getElementById("ciudad");
+            if (ciudad.value.trim() === "") {
+              alert("El campo Ciudad no puede estar vacío.");
+              ciudad.focus();
+              return false;
+            }
+
+            // Validación para el campo Edad
+            var edad = document.getElementById("edad");
+            if (edad.value.trim() === "") {
+              alert("El campo Edad no puede estar vacío.");
+              edad.focus();
+              return false;
+            }
+            
+            alert("Formulario enviado con éxito!");
+          });
+      };
+    </script>
+  </body>
+</html>
